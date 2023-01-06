@@ -2,8 +2,9 @@ import 'dart:io';
 
 import 'package:ffmpeg_kit_flutter/ffmpeg_kit.dart';
 import 'package:ffmpeg_kit_flutter/return_code.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:material_speed_dial/material_speed_dial.dart';
 import 'package:video_player/video_player.dart';
 import 'package:path_provider/path_provider.dart' as syspaths;
 
@@ -19,6 +20,8 @@ class VideoVm extends ChangeNotifier {
     outputVidController?.dispose();
     super.dispose();
   }
+
+  final key = GlobalKey<SpeedDialState>();
 
   List<File> videos = <File>[];
 

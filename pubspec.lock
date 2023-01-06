@@ -212,6 +212,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.3"
+  material_speed_dial:
+    dependency: "direct main"
+    description:
+      name: material_speed_dial
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.7"
   meta:
     dependency: transitive
     description:

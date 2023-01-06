@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_speed_dial/material_speed_dial.dart';
 import 'package:video_player/video_player.dart';
 
 import 'vm/video_vm.dart';
@@ -76,10 +77,26 @@ class _VideoViewState extends State<VideoView> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: vm.pickVideo,
-        tooltip: 'Increment',
+      floatingActionButton: SpeedDial(
+        key: vm.key,
+        invokeAfterClosing: true,
         child: const Icon(Icons.add),
+        expandedChild: const Icon(Icons.add),
+        backgroundColor: Colors.blue,
+        expandedBackgroundColor: Colors.black,
+        children: [
+          SpeedDialChild(
+            child: const Icon(Icons.add),
+            label: const Text('Pick video'),
+            onPressed: vm.pickVideo,
+          ),
+          // TODO: PICK AND AUDIO
+          SpeedDialChild(
+            child: const Icon(Icons.audiotrack),
+            label: const Text('Pick n Use Audio'),
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
